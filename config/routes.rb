@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  root 'application#home'
   resources :plays
   resources :games
   resources :consoles
   resources :users
+
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'session#destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
