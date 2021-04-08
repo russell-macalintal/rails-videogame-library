@@ -26,13 +26,6 @@ ActiveRecord::Schema.define(version: 2021_03_30_134419) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "game_users", force: :cascade do |t|
-    t.integer "game_id"
-    t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "games", force: :cascade do |t|
     t.string "name"
     t.string "developer"
