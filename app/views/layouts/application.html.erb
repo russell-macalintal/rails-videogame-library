@@ -13,8 +13,11 @@
   <body>
     <h1>RAILS VIDEOGAME LIBRARY</h1>
       <nav>
-        <%= link_to "HOME", root_url %>
-        <%= link_to "LOGOUT", logout_path if logged_in? %>
+        <span><%= link_to "HOME", root_url %></span>
+        <% if logged_in? %>
+          <span><%= link_to "USER", user_path(current_user) %></span>
+          <span><%=link_to "LOGOUT", logout_path %></span>
+        <% end %>
       </nav>
     <%= yield %>
   </body>

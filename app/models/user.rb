@@ -18,8 +18,4 @@ class User < ApplicationRecord
 
     has_secure_password
 
-    def user_params
-        params.require(:user).permit(:firstname, :lastname, :age, :username, :password)
-    end
-
 end
