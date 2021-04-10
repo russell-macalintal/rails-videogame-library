@@ -8,12 +8,18 @@ class User < ApplicationRecord
     has_many :console_users
     has_many :consoles, through: :console_users
 
+    validates :firstname, :lastname, :age, :username, :password, presence: true
+    validates :firstname, length: { minimum: 2 }
+    validates :lastname, length: { minimum: 2 }
+    validates :age, numericality: { only_integer: true, greater_than: 12 }
+    validates :username, uniqueness: true
+    validates :password, confirmation: true
+    validates :password_confirmation, presence: true
+
     has_secure_password
 
-    def new
+    def user_params
+        params.require(:user).permit(:firstname, :lastname, :age, :username, :password)
     end
 
-    def create
-    end
-    
 end
