@@ -1,12 +1,10 @@
-<%# Refactor this view to include navigation links within the home page if user is already logged in. %>
-
-
 <div>
     <% if logged_in? %>
-        <h1> Welcome, <%= current_user.username %>!</h1>
+        <h1>Welcome, <%= current_user.username %>!</h1>
+        <div><strong><%= link_to "Your Profile", show_user_path %></strong></div>
     <% else %>
-        <h1>Welcome to the the Community!</h1>
-        <p>New Users: <strong><%= link_to "Sign Up Here", new_user_path %></strong></p>
-        <p>Existing Users: <strong><%= link_to "Log In Here", login_path %></strong></p>
+        <h1>Welcome to the Community!</h1>
+        <div>New Users: <strong><%= link_to "Sign Up Here", new_user_path %></strong></div>
+        <div>Existing Users: <strong><%= link_to "Log In Here", login_path %></strong></div>
     <% end %>
 </div>

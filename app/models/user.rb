@@ -8,13 +8,12 @@ class User < ApplicationRecord
     has_many :console_users
     has_many :consoles, through: :console_users
 
-    validates :firstname, :lastname, :age, :username, :password, presence: true
+    validates :firstname, :lastname, :age, :username, :password, :password_confirmation, presence: true
     validates :firstname, length: { minimum: 2 }
     validates :lastname, length: { minimum: 2 }
     validates :age, numericality: { only_integer: true, greater_than: 12 }
     validates :username, uniqueness: true
     validates :password, confirmation: true
-    validates :password_confirmation, presence: true
 
     has_secure_password
 
