@@ -7,19 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user_list = [
-  {firstname: "Mario", lastname: "Mario", age: 40, username: "Mario", password: "Mustachio"},
-  {firstname: "Link", lastname: "Link", age: 117, username: "Link", password: "StasisAllDay"},
-  {firstname: "John", lastname: "117", age: 47, username: "MasterChief", password: "Cortana"},
-  {firstname: "Iroquois", lastname: "Pliskin", age: 49, username: "SolidSnake", password: "Hideo"},
-  {firstname: "Lara", lastname: "Croft", age: 29, username: "LaraCroft", password: "Archaelogist"},
-  {firstname: "David", lastname: "Bateson", age: 30, username: "Agent47", password: "NotAnAssassin"},
-  {firstname: "Jean Luc", lastname: "Pikachu", age: 25, username: "Pikachu", password: "YellowLightning"},
-  {firstname: "Olgilvie", lastname: "Hedgehog", age: 30, username: "Sonic", password: "LongLiveSega"},
-  {firstname: "Gordon", lastname: "Freeman", age: 27, username: "G-Man", password: "HalfLife3?"}
+  {firstname: "Mario", lastname: "Mario", age: 40, username: "Mario", password: "Mustachio", password_confirmation: "Mustachio"},
+  {firstname: "Link", lastname: "Link", age: 117, username: "Link", password: "StasisAllDay", password_confirmation: "StasisAllDay"},
+  {firstname: "John", lastname: "117", age: 47, username: "MasterChief", password: "Cortana", password_confirmation: "Cortana"},
+  {firstname: "Iroquois", lastname: "Pliskin", age: 49, username: "SolidSnake", password: "Hideo", password_confirmation: "Hideo"},
+  {firstname: "Lara", lastname: "Croft", age: 29, username: "LaraCroft", password: "Archaelogist", password_confirmation: "Archaelogist"},
+  {firstname: "David", lastname: "Bateson", age: 30, username: "Agent47", password: "NotAnAssassin", password_confirmation: "NotAnAssassin"},
+  {firstname: "Jean Luc", lastname: "Pikachu", age: 25, username: "Pikachu", password: "YellowLightning", password_confirmation: "YellowLightning"},
+  {firstname: "Olgilvie", lastname: "Hedgehog", age: 30, username: "Sonic", password: "LongLiveSega", password_confirmation: "LongLiveSega"},
+  {firstname: "Gordon", lastname: "Freeman", age: 27, username: "G-Man", password: "HalfLife3?", password_confirmation: "HalfLife3?"}
 ]
 
 user_list.each do |u|
-  User.create(firstname: u[:firstname], lastname: u[:lastname], age: u[:age], username: u[:username], password: u[:password])
+  User.create(firstname: u[:firstname], lastname: u[:lastname], age: u[:age], username: u[:username], password: u[:password], password_confirmation: u[:password_confirmation])
 end
 
 # games_list = [

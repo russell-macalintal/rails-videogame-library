@@ -15,7 +15,7 @@
       <nav>
         <span><%= link_to "HOME", root_url %></span>
         <% if logged_in? %>
-          <span><%= link_to "USER", user_path(current_user) %></span>
+          <span><%= link_to "MY ACCOUNT", user_path(current_user) %></span>
           <span><%=link_to "LOGOUT", logout_path %></span>
         <% end %>
       </nav>
