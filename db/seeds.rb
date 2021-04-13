@@ -22,62 +22,75 @@ user_list.each do |u|
   User.create(firstname: u[:firstname], lastname: u[:lastname], age: u[:age], username: u[:username], password: u[:password], password_confirmation: u[:password_confirmation])
 end
 
-# games_list = [
-#   "Legend of Zelda: Breath of the Wild",
-#   "Super Mario 64",
-#   "Metal Gear Solid V: The Phantom Pain",
-#   "Final Fantasy VII",
-#   "Half-Life 2",
-#   "Portal",
-#   "Minecraft",
-#   "Fortnite",
-#   "Starcraft 2",
-#   "Grand Theft Auto V",
-#   "The Last of Us",
-#   "Pac-Man",
-#   "Resident Evil 3",
-#   "Tetris",
-#   "Red Dead Redemption 2",
-#   "Death Stranding",
-#   "Animal Crossing: New Horizons",
-#   "Super Smash Brothers Ultimate",
-#   "Halo: Combat Evolved",
-#   "GoldenEye 007",
-#   "DOOM Eternal",
-#   "Pong",
-#   "Mortal Kombat",
-#   "Katamari Damacy",
-#   "Starfox 64",
-#   "Civilization IV",
-#   "Guitar Hero",
-#   "Fallout",
-#   "Batman: Arkham City",
-#   "Call of Duty: Modern Warfare"
-# ]
+games_list = {
+  "Legend of Zelda: Breath of the Wild" => "Nintendo",
+  "Super Mario 64" => "Nintendo",
+  "Metal Gear Solid V: The Phantom Pain" => "Konami",
+  "Final Fantasy VII" => "Square Enix",
+  "Half-Life 2" => "Valve",
+  "Portal" => "Valve",
+  "Fortnite" => "Epic Games",
+  "Population One" => "BigBox",
+  "Starcraft 2" => "Blizzard",
+  "Grand Theft Auto V" => "Rockstar",
+  "The Last of Us" => "Naughty Dog",
+  "Pac-Man" => "Namco",
+  "Resident Evil 3" => "Capcom",
+  "Tetris" => "Alexey Pajitnov",
+  "Red Dead Redemption 2" => "Rockstar",
+  "Death Stranding" => "Kojima",
+  "Animal Crossing: New Horizons" => "Nintendo",
+  "Super Smash Brothers Ultimate" => "Bandai Namco",
+  "Halo: Combat Evolved" => "Bungie",
+  "GoldenEye 007" => "Rare",
+  "DOOM Eternal" => "id",
+  "Pong" => "Atari",
+  "Mortal Kombat" => "Midway",
+  "Katamari Damacy" => "Namco",
+  "Starfox 64" => "Nintendo",
+  "Civilization IV" => "Firaxis",
+  "Guitar Hero" => "Harmonix",
+  "Fallout" => "Bethesda",
+  "Batman: Arkham City" => "Rocksteady",
+  "Call of Duty: Modern Warfare" => "Infinity Ward",
+  "The Climb" => "Crytek",
+  "Burnout Paradise" => "Criterion",
+  "Gran Turismo 6" => "Polyphony Digital",
+  "Among Us" => "InnerSloth",
+  "Madden NFL 21" => "Electronic Arts",
+  "Overwatch" => "Blizzard",
+  "Control" => "Remedy",
+  "Team Fortress 2" => "Valve",
+  "No Man's Sky" => "Hello Games",
+  "Cyberpunk 2077" => "CD Projekt"
+}
 
-# games_list.each do |name|
-#   Game.create(name: name)
-# end
+games_list.each do |name, developer|
+  Game.create(name: name, developer: developer)
+end
 
-# consoles_list = {
-#   "Switch" => "Nintendo",
-#   "Wii" => "Nintendo",
-#   "N64" => "Nintendo",
-#   "Gamecube" => "Nintendo",
-#   "Xbox One" => "Microsoft",
-#   "Xbox 360" => "Microsoft",
-#   "Xbox" => "Microsoft",
-#   "Playstation 4" => "Sony",
-#   "Playstation 3" => "Sony",
-#   "Playstation 2" => "Sony",
-#   "Playstation" => "Sony",
-#   "Dreamcast" => "Sega",
-#   "PC" => "OEM Manufacturers"
-# }
+consoles_list = {
+  "Switch" => "Nintendo",
+  "Wii" => "Nintendo",
+  "N64" => "Nintendo",
+  "Gamecube" => "Nintendo",
+  "Xbox Series (X/S)" => "Microsoft",
+  "Xbox One (X/S)" => "Microsoft",
+  "Xbox 360" => "Microsoft",
+  "Xbox" => "Microsoft",
+  "Playstation 5" => "Sony",
+  "Playstation 4" => "Sony",
+  "Playstation 3" => "Sony",
+  "Playstation 2" => "Sony",
+  "Playstation" => "Sony",
+  "Dreamcast" => "Sega",
+  "PC" => "OEM Manufacturers",
+  "VR Headset" => "OEM Manufacturers"
+}
 
-# consoles_list.each do |name, manuf|
-#   Console.create(name: name, manufacturer: manuf)
-# end
+consoles_list.each do |name, manuf|
+  Console.create(name: name, manufacturer: manuf)
+end
 
 # User.all.each do |user|
 #   game_ids = (1..30).to_a.shuffle.pop(10)

@@ -5,7 +5,6 @@ class UsersController < ApplicationController
     end
 
     def create
-        # Add error messages for failed attribute validation.
         @user = User.create(user_params)
         if @user.errors.empty?
             session[:user_id] = @user.id
@@ -17,8 +16,8 @@ class UsersController < ApplicationController
     end
 
     def show
-        if session[:user_id]
-            @user = User.find(session[:user_id])
+        if logged_in?
+            current_user
         else
             redirect_to root_url
         end
