@@ -1,5 +1,14 @@
-<h1>MY CONSOLE LIBRARY</h1>
+<% if logged_in? && @user == current_user %>
+    <h3>MY CONSOLE LIBRARY</h3>
 
-<h1>TOTAL HOURS PLAYED</h1>
+    <h3>TOTAL HOURS PLAYED</h3>
 
-<h1>MY GAMES LIBRARY</h1>
+    <h3>MY GAMES LIBRARY</h3>
+<% elsif %>
+    <h2><%= @user.username %>'s LIBRARY</h2>
+    <h3>CONSOLE LIBRARY</h3>
+
+    <h3>TOTAL HOURS PLAYED</h3>
+
+    <h3>GAMES LIBRARY</h3>
+<% end %>

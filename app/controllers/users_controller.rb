@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
     
+    def index
+        @users = User.all
+    end
+
     def new
-        @user = User.new
+        @user= User.new
     end
 
     def create
@@ -11,16 +15,12 @@ class UsersController < ApplicationController
             redirect_to user_path(@user)
         else
             flash[:errors] = @user.errors
-            redirect_to new_user_path(@user)
+            redirect_to new_user_path
         end
     end
 
     def show
-        if logged_in?
-            current_user
-        else
-            redirect_to root_url
-        end
+        @user = User.find(params[:id])
     end
 
 
