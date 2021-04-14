@@ -1,16 +1,18 @@
 <% if logged_in? && @user == current_user %>
-    <h3>MY CONSOLE LIBRARY</h3>
-
+    <h3>MY CONSOLES</h3>
+        <% @my_consoles.each do |con|%>
+            <%= link_to "#{con.name}", console_path(con)%>
+        <% end %>
     <h3>TOTAL HOURS PLAYED</h3>
 
-    <h3>MY GAMES LIBRARY</h3>
+    <h3>MY GAMES</h3>
 <% elsif logged_in? %>
     <h2><%= @user.username %>'s LIBRARY</h2>
-    <h3>CONSOLE LIBRARY</h3>
+    <h3>CONSOLES</h3>
 
     <h3>TOTAL HOURS PLAYED</h3>
 
-    <h3>GAMES LIBRARY</h3>
+    <h3>GAMES</h3>
 <% else %>
     <p>Please log in to view this information.</p>
 <% end %>

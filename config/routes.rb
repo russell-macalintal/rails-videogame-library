@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   resources :plays
   resources :games
   resources :consoles
-  resources :users
+  resources :users do
+    resources :games, only: [:show, :index]
+    resources :consoles, only: [:show, :index]
+  end
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
