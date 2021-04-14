@@ -11,16 +11,19 @@
   </head>
 
   <body>
-    <h1>RAILS VIDEOGAME LIBRARY</h1>
-      <nav>
-        <span><%= link_to "HOME", root_url %></span>
-        <span><%= link_to "CONSOLES", consoles_path %></span>
-        <span><%= link_to "GAMES", games_path %></span>
-        <% if logged_in? %>
-          <span><%= link_to "MY PROFILE", user_path(current_user) %></span>
-          <span><%=link_to "LOGOUT", logout_path %></span>
-        <% end %>
-      </nav>
+    <div class="top-menu">
+      <h1>RAILS VIDEOGAME LIBRARY</h1>
+        <nav>
+          <span><%= link_to "HOME", root_url %></span>
+          <span><%= link_to "CONSOLES", consoles_path %></span>
+          <span><%= link_to "GAMES", games_path %></span>
+          <% if logged_in? %>
+            <span><%= link_to "MY PROFILE", user_path(current_user) %></span>
+            <span><%= link_to "USERS", users_path%></span>
+            <span><%=link_to "LOGOUT", logout_path %></span>
+          <% end %>
+        </nav>
+    </div>
     <%= yield %>
   </body>
 </html>
