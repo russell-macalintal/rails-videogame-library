@@ -1,7 +1,6 @@
 <div>
     <% if logged_in? %>
         <h1>WELCOME, <%= current_user.username %>!</h1>
-        <div><strong><%= link_to "MY PROFILE", user_path(current_user) %></strong></div>
     <% else %>
         <h1>WELCOME TO THE COMMUNITY!</h1>
         <div>NEW USERS: <strong><%= link_to "SIGN UP HERE", new_user_path %></strong></div>

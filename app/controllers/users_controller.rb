@@ -21,8 +21,6 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
-        @my_games = @user.games
-        @my_consoles = @user.consoles
     end
 
 
