@@ -3,6 +3,6 @@ class Play < ApplicationRecord
     belongs_to :user
 
     def play_game
-
+        
     end
 end
