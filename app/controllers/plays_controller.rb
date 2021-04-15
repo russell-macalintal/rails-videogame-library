@@ -1,12 +1,20 @@
 class PlaysController < ApplicationController
+
+    def new
+        @game = Game.find(params[:game_id])
+        @play = Play.new
+    end
+    
     def create
-        play = Play.create(play_params)
-        play.play_game
-        user = User.find(play.user_id)
-        redirect_to user_games(user)
+        @play = Play.create(play_params)
+        @play.game_id = params[:game_id]
+        @play.user_id = params[:user_id]
+        flash[:notice] = @play.play_game
+        user = User.find(params[:user_id])
+        redirect_to user_games_path(user)
     end
 
     def play_params
-        params.permit(:user_id, :game_id, :hours_played)
+        params.require(:play).permit(:user_id, :game_id, :hours_played)
     end
 end
