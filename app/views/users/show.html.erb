@@ -1,6 +1,6 @@
 <% if logged_in? && @user == current_user %>
     <h3>MY PROFILE</h3>
-    <h4>TOTAL HOURS PLAYED</h4>
+    <h4>TOTAL HOURS PLAYED: <%= @user.hours_played %></h4>
     <h4><%= link_to "MY CONSOLES", user_consoles_path(@user.id) %></h4>
     <h4><%= link_to "MY GAMES", user_games_path(@user.id)%></h4>
 <% elsif logged_in? %>

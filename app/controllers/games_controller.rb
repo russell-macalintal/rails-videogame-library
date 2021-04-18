@@ -8,8 +8,16 @@ class GamesController < ApplicationController
         end
     end
 
+    def create
+
+    end
+
     def show
         @game = Game.find(params[:id])
+    end
+
+    def game_params
+        params.require(:game).permit(:name, :developer, :hours_played)
     end
 end
  

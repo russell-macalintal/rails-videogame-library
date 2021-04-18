@@ -19,7 +19,7 @@ user_list = [
 ]
 
 user_list.each do |u|
-  User.create(firstname: u[:firstname], lastname: u[:lastname], age: u[:age], username: u[:username], password: u[:password], password_confirmation: u[:password_confirmation])
+  User.create(firstname: u[:firstname], lastname: u[:lastname], age: u[:age], username: u[:username], password: u[:password], password_confirmation: u[:password_confirmation], :hours_played => 0)
 end
 
 games_list = {
@@ -66,7 +66,7 @@ games_list = {
 }
 
 games_list.each do |name, developer|
-  Game.create(name: name, developer: developer)
+  Game.create(name: name, developer: developer, hours_played: 0)
 end
 
 consoles_list = {
