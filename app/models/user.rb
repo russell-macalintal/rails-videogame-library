@@ -13,7 +13,7 @@ class User < ApplicationRecord
     validates :lastname, length: { minimum: 2 }
     validates :age, numericality: { only_integer: true, greater_than: 12 }
     validates :username, uniqueness: true
-    validates :password, presence: true, confirmation: true, unless: lambda{ persisted? and password.nil? }
+    validates :password, presence: true, length: { minimum: 6 }, confirmation: true, unless: lambda{ persisted? and password.nil? }
     validates :password_confirmation, presence: true, unless: lambda{ persisted? and password.nil? }
 
     has_secure_password

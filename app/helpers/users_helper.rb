@@ -12,6 +12,8 @@ module UsersHelper
                 err_list << "Username #{val[0]}."
             elsif key == "password"
                 err_list << "Password #{val[0]}."
+            elsif key == "password_confirmation"
+                err_list << "Passwords do not match."
             end
         end
 
