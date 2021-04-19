@@ -8,6 +8,10 @@ class GamesController < ApplicationController
         end
     end
 
+    def new
+    
+    end
+    
     def create
 
     end

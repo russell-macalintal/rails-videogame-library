@@ -3,5 +3,5 @@ class Game < ApplicationRecord
     # has_many :users, through: :game_users
 
     has_many :plays
-    has_many :users, through: :plays
+    has_many :users, -> { distinct }, through: :plays
 end
