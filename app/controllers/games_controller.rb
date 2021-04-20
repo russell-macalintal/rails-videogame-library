@@ -43,6 +43,11 @@ class GamesController < ApplicationController
         redirect_to game_path(@game)
     end
 
+    def destroy
+        Game.find(params[:id]).destroy
+        flash[:notice] = "Game Deleted From Library"
+        redirect_to games_path
+    end
 
     def game_params
         params.require(:game).permit(:name, :developer, :hours_played)
