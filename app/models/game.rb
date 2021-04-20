@@ -4,4 +4,6 @@ class Game < ApplicationRecord
 
     has_many :plays
     has_many :users, -> { distinct }, through: :plays
+
+    validates :name, uniqueness: true
 end
