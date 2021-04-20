@@ -9,16 +9,18 @@ class GamesController < ApplicationController
     end
 
     def new
+    # Admin-only action
     
     end
     
     def create
-
+    # Admin-only action
     end
 
     def show
         @game = Game.find(params[:id])
     end
+
 
     def game_params
         params.require(:game).permit(:name, :developer, :hours_played)

@@ -10,12 +10,13 @@ user_list = [
   {firstname: "Mario", lastname: "Mario", age: 40, username: "Mario", password: "Mustachio", password_confirmation: "Mustachio"},
   {firstname: "Link", lastname: "Link", age: 117, username: "Link", password: "StasisAllDay", password_confirmation: "StasisAllDay"},
   {firstname: "John", lastname: "117", age: 47, username: "MasterChief", password: "Cortana", password_confirmation: "Cortana"},
-  {firstname: "Iroquois", lastname: "Pliskin", age: 49, username: "SolidSnake", password: "Hideo", password_confirmation: "Hideo"},
+  {firstname: "Iroquois", lastname: "Pliskin", age: 49, username: "SolidSnake", password: "HideoKojima", password_confirmation: "HideoKojima"},
   {firstname: "Lara", lastname: "Croft", age: 29, username: "LaraCroft", password: "Archaelogist", password_confirmation: "Archaelogist"},
   {firstname: "David", lastname: "Bateson", age: 30, username: "Agent47", password: "NotAnAssassin", password_confirmation: "NotAnAssassin"},
   {firstname: "Jean Luc", lastname: "Pikachu", age: 25, username: "Pikachu", password: "YellowLightning", password_confirmation: "YellowLightning"},
   {firstname: "Olgilvie", lastname: "Hedgehog", age: 30, username: "Sonic", password: "LongLiveSega", password_confirmation: "LongLiveSega"},
-  {firstname: "Gordon", lastname: "Freeman", age: 27, username: "G-Man", password: "HalfLife3?", password_confirmation: "HalfLife3?"}
+  {firstname: "Gordon", lastname: "Freeman", age: 27, username: "G-Man", password: "HalfLife3?", password_confirmation: "HalfLife3?"},
+  {firstname: "Admin", lastname: "Istrator", age: 1000, username: "admin", password: "admin123", password_confirmation: "admin123"}
 ]
 
 user_list.each do |u|
