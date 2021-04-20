@@ -15,7 +15,13 @@ class GamesController < ApplicationController
     
     def create
     # Admin-only action
-        @game = Game.create(game_params)
+        if Game.where(name: params[:game][:name]).exists?
+            flash[:notice] = "Game Already Exists"
+        else
+            @game = Game.create(game_params)
+            flash[:notice] = "Game Successfully Created"
+        end
+
         redirect_to games_path
     end
 
@@ -29,7 +35,11 @@ class GamesController < ApplicationController
 
     def update
         @game = Game.find(params[:id])
-        @game.update(game_params)
+        if @game.update(game_params)
+            flash[:notice] = "Game Details Edited Successfully"
+        else
+            flash[:notice] = "Oops! Something went wrong. Try again."
+        end
         redirect_to game_path(@game)
     end
 
