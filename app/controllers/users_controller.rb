@@ -17,6 +17,16 @@ class UsersController < ApplicationController
             flash[:errors] = @user.errors
             redirect_to new_user_path
         end
+
+        # ALTERNATIVE METHOD DEFINTION + ERROR MESSAGE DISPLAY
+        # @user = User.new(user_params)
+        # if @user.save
+        #     session[:user_id] = @user.id
+        #     redirect_to user_path(@user)
+        # else
+        #     render :new
+        # end
+
     end
 
     def show

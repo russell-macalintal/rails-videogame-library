@@ -18,4 +18,8 @@ class User < ApplicationRecord
 
     has_secure_password
 
+    def admin?
+        return true if self.username == "admin"
+    end
+
 end

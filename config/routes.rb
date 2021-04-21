@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   resources :games
   resources :consoles
   resources :users do
-    resources :games, only: [:show, :index]
-    resources :consoles, only: [:index]
+    resources :games, only: [:new, :edit, :show, :index]
+    resources :consoles, only: [:new, :edit, :show, :index]
+    resources :plays, only: [:new]
   end
 
   get '/login', to: 'sessions#new'
