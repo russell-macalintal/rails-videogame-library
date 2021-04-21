@@ -15,8 +15,7 @@ user_list = [
   {firstname: "David", lastname: "Bateson", age: 30, username: "Agent47", password: "NotAnAssassin", password_confirmation: "NotAnAssassin"},
   {firstname: "Jean Luc", lastname: "Pikachu", age: 25, username: "Pikachu", password: "YellowLightning", password_confirmation: "YellowLightning"},
   {firstname: "Olgilvie", lastname: "Hedgehog", age: 30, username: "Sonic", password: "LongLiveSega", password_confirmation: "LongLiveSega"},
-  {firstname: "Gordon", lastname: "Freeman", age: 27, username: "G-Man", password: "HalfLife3?", password_confirmation: "HalfLife3?"},
-  {firstname: "Admin", lastname: "Istrator", age: 1000, username: "admin", password: "admin123", password_confirmation: "admin123"}
+  {firstname: "Gordon", lastname: "Freeman", age: 27, username: "G-Man", password: "HalfLife3?", password_confirmation: "HalfLife3?"}
 ]
 
 user_list.each do |u|
@@ -103,3 +102,6 @@ User.all.each do |user|
     user.consoles << Console.find(id)
   end
 end
+
+# Create admin account
+User.create(firstname: "Admin", lastname: "Istrator", age: 1000, username: "admin", password: "admin123", password_confirmation: "admin123")
