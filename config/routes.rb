@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   root 'application#home'
-  resources :plays
+  resources :plays, only: [:create]
+  resources :console_users, only: [:create]
   resources :games
   resources :consoles
   resources :users do
-    resources :games, only: [:new, :edit, :show, :index]
-    resources :consoles, only: [:new, :edit, :show, :index]
+    resources :games, only: [:show, :index]
+    resources :consoles, only: [:show, :index]
     resources :plays, only: [:new]
+    resources :console_users, only: [:new]
   end
 
   get '/login', to: 'sessions#new'
