@@ -50,6 +50,10 @@ class GamesController < ApplicationController
         redirect_to games_path
     end
 
+    def most_popular
+        @pop_game = Game.most_popular
+    end
+
     def game_params
         params.require(:game).permit(:name, :developer, :hours_played)
     end

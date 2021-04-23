@@ -47,6 +47,9 @@ class ConsolesController < ApplicationController
         redirect_to consoles_path
     end
 
+    def most_popular
+        @pop_console = Console.most_popular
+    end
     
     def console_params
         params.require(:console).permit(:name, :manufacturer)
