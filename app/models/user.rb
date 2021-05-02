@@ -22,13 +22,12 @@ class User < ApplicationRecord
 
 
     def self.find_or_create_through_fb(auth)
-        binding.pry
         @user = User.find_by(fb_id: auth['uid'])
         if @user.nil?
             @user = User.new
             @user.username = auth['info']['email']
-            @user.firstname = auth['info']['first_name']
-            @user.lastname = auth['info']['last_name']
+            @user.firstname = auth['info']['name'].split.first
+            @user.lastname = auth['info']['name'].split.last
             # Users who sign up through Facebook is given a default age of 20 since Facebook does not grant permission to collect this information without an App Review
             @user.age = 20
             @user.hours_played = 0
