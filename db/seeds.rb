@@ -19,7 +19,10 @@ user_list = [
 ]
 
 user_list.each do |u|
-  User.create(firstname: u[:firstname], lastname: u[:lastname], age: u[:age], username: u[:username], password: u[:password], password_confirmation: u[:password_confirmation], :hours_played => 0)
+  # User.create(firstname: u[:firstname], lastname: u[:lastname], age: u[:age], username: u[:username], password: u[:password], password_confirmation: u[:password_confirmation], :hours_played => 0)
+  user = User.new(u)
+  user.hours_played = 0
+  user.save
 end
 
 games_list = {

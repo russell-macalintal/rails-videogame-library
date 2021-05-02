@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
+  get '/auth/facebook/callback', to: 'sessions#create_through_fb'
+
   get '/games/most_popular', to: 'games#most_popular', as: 'popular_game'
   get '/consoles/most_popular', to: 'consoles#most_popular',  as: 'popular_console'
 

@@ -18,8 +18,24 @@ class SessionsController < ApplicationController
     end
   end
 
+  def create_through_fb
+    @user = User.find_or_create_through_fb(auth_hash)
+    if @user.id == nil
+      flash[:error] = "Error: Could not link your Facebook account"
+      redirect_to '/login'
+    else
+      session[:user_id] = @user.id
+      redirect_to root_url
+    end
+  end
+
   def destroy
     session.destroy
     redirect_to root_path
   end
+
+  def auth_hash
+    request.env['omniauth.auth']
+  end
+
 end

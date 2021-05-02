@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_18_140551) do
+ActiveRecord::Schema.define(version: 2021_05_01_082059) do
 
   create_table "console_users", force: :cascade do |t|
     t.integer "console_id"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2021_04_18_140551) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "hours_played"
+    t.integer "fb_id"
   end
 
 end

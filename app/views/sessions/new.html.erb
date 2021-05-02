@@ -2,6 +2,7 @@
 
 <% if flash[:error] %>
     <div class="errors" ><%= flash[:error] %></div>
+    <div>No account? <%= link_to 'Sign Up Here', new_user_path %></div><br>
 <% end %>
 
 <%= form_tag '/login' do %>
@@ -13,5 +14,5 @@
 <% end %>
 <br><br>
 
-<h3>Or Log In Through:</h3>
-<h3><%= link_to 'Facebook', '/auth/facebook', method: :post %></h3>
+<h3>Or Try To:</h3>
+<h3><%= link_to 'Log In Using Facebook', '/auth/facebook', method: :post %></h3>
