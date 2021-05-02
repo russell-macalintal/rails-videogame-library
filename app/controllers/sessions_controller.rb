@@ -19,8 +19,6 @@ class SessionsController < ApplicationController
   end
 
   def create_through_fb
-    puts auth_hash['info']['name'].split.first
-    puts auth_hash['info']['name'].split.last
     @user = User.find_or_create_through_fb(auth_hash)
     if @user.id == nil
       flash[:error] = "Error: Could not link your Facebook account"
