@@ -19,3 +19,17 @@ In order to better maintain security and preserve the integrity of the database,
 - Log in using your Facebook credentials to automatically generate your account details
 - Enjoy the app
 
+
+# CONTRIBUTING
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/russell-macalintal/rails-videogame-library. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+
+## LICENSE
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+
+## CODE OF CONDUCT
+
+Everyone interacting in the Sinatra Game Library project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the CODE OF CONDUCT.
